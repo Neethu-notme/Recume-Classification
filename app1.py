@@ -3,7 +3,7 @@ import pickle
 import re
 import numpy as np
 import pandas as pd
-import pdfplumber
+#import pdfplumber
 import docx
 import matplotlib.pyplot as plt
 
@@ -16,14 +16,14 @@ def preprocess(text):
     text = re.sub(r'\s+', ' ', text)
     return text
 
-def extract_pdf(file):
-    text = ""
-    with pdfplumber.open(file) as pdf:
-        for page in pdf.pages:
-            content = page.extract_text()
-            if content:
-                text += content
-    return text
+#def extract_pdf(file):
+#    text = ""
+#    with pdfplumber.open(file) as pdf:
+#        for page in pdf.pages:
+#            content = page.extract_text()
+#            if content:
+#                text += content
+#    return text
 
 def extract_docx(file):
     doc = docx.Document(file)
